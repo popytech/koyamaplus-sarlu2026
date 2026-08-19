@@ -1,0 +1,17 @@
+{
+  "name": "KOYAMA PLUS SARLU",
+  "short_name": "KOYAMA PLUS",
+  "description": "Boutique de produits naturels et services de nettoyage professionnels.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#312883",
+  "icons": [
+    {
+      "src": "/pwa-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
