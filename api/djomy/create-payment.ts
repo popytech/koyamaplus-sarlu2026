@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { sql } from '../_lib/db.js';
 import { createPaymentGateway } from '../_lib/djomy.js';
-// @ts-ignore - resolveJsonModule isn't configured for the api/ build, but the bundler inlines this fine.
-import productsData from '../../src/data/products.json';
+// @ts-ignore - resolveJsonModule isn't configured for the api/ build; Vercel's Node runtime needs the import attribute at runtime.
+import productsData from '../../src/data/products.json' with { type: 'json' };
 
 interface CartItemInput {
   product_id: string;
