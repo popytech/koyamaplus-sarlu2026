@@ -1,0 +1,810 @@
+/* ==================== ULTRA SMALL PHONES (≤ 375px) ==================== */
+@media (max-width: 375px) {
+  /* Hero Section */
+  h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.1;
+    margin-bottom: 0.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
+  }
+
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  p {
+    font-size: 0.75rem !important;
+    line-height: 1.5;
+  }
+
+  /* Button Optimization */
+  button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    min-height: 40px;
+  }
+
+  /* Grid Optimization */
+  .grid {
+    gap: 0.5rem !important;
+  }
+
+  /* Padding Optimization */
+  section {
+    padding: 1.25rem 0.5rem !important;
+  }
+
+  .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Heading Spacing */
+  .py-16 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* Image Heights */
+  .h-96,
+  .h-80 {
+    height: 12rem !important;
+  }
+
+  .h-64 {
+    height: 10rem !important;
+  }
+
+  .h-48 {
+    height: 8rem !important;
+  }
+
+  /* Input Optimization */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    min-height: 44px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+}
+
+/* ==================== SMALL PHONES (376px - 640px) ==================== */
+@media (min-width: 376px) and (max-width: 640px) {
+  /* Hero Section */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+    margin-bottom: 1rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.125rem !important;
+  }
+
+  p {
+    font-size: 0.875rem !important;
+    line-height: 1.6;
+  }
+
+  /* Button Optimization */
+  button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    min-height: 44px;
+  }
+
+  /* Grid Optimization */
+  .grid {
+    gap: 0.75rem !important;
+  }
+
+  .grid-cols-2,
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-3,
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-4,
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Padding Optimization */
+  section {
+    padding: 2rem 1rem !important;
+  }
+
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Card Sizes */
+  .rounded-xl {
+    border-radius: 0.75rem;
+  }
+
+  /* Image Heights */
+  .h-96 {
+    height: 16rem !important;
+  }
+
+  .h-64 {
+    height: 12rem !important;
+  }
+
+  .h-48 {
+    height: 10rem !important;
+  }
+
+  /* Flex Direction */
+  .flex-col.sm\:flex-row {
+    flex-direction: column;
+  }
+
+  /* Text Alignment */
+  .text-center {
+    text-align: center;
+  }
+
+  /* Spacing */
+  .mb-8 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .gap-8 {
+    gap: 1rem !important;
+  }
+
+  .gap-6 {
+    gap: 0.75rem !important;
+  }
+
+  /* Header */
+  .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Category Buttons */
+  button[class*="px-4"][class*="py-2"] {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
+
+  /* Input Optimization */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    min-height: 44px;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Form Labels */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* ==================== TABLET PORTRAIT (641px - 768px) ==================== */
+@media (min-width: 641px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.875rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  section {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .grid-cols-2,
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-3,
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-cols-4,
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .h-96 {
+    height: 18rem !important;
+  }
+
+  .h-64 {
+    height: 14rem !important;
+  }
+}
+
+/* ==================== TABLET LANDSCAPE (769px - 1024px) ==================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.25rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  section {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .grid-cols-2,
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .h-96 {
+    height: 20rem !important;
+  }
+
+  .h-64 {
+    height: 16rem !important;
+  }
+}
+
+/* ==================== DESKTOP (1025px - 1280px) ==================== */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  section {
+    padding: 4rem 2rem;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .h-96 {
+    height: 24rem !important;
+  }
+
+  .h-64 {
+    height: 16rem !important;
+  }
+}
+
+/* ==================== LARGE DESKTOP (1281px - 1536px) ==================== */
+@media (min-width: 1281px) and (max-width: 1536px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  section {
+    padding: 5rem 3rem;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ==================== ULTRA-WIDE (1537px+) ==================== */
+@media (min-width: 1537px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 6rem 4rem;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem !important;
+  }
+
+  button {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .h-96,
+  .h-64,
+  .h-80 {
+    height: 8rem !important;
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Safe Area for Notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch Target Size (44x44px minimum) */
+button,
+a[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Prevent Horizontal Scroll */
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Scrollable on Mobile */
+@media (max-width: 640px) {
+  .flex.flex-wrap {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  button {
+    border: 2px solid currentColor;
+    font-weight: bold;
+  }
+
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Touch Friendly Spacing */
+@media (hover: none) and (pointer: coarse) {
+  button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  a:active {
+    opacity: 0.8;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  /* Support dark mode if needed */
+  body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  button,
+  .no-print,
+  header,
+  nav {
+    display: none !important;
+  }
+}
+  [class*="bg-emerald-500"][class*="text-white"] {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Product Grid */
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  }
+
+  /* Testimonial Grid */
+  .md\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Stats */
+  .grid-cols-3 {
+    gap: 1rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.875rem !important;
+  }
+
+  /* Overflow Hidden */
+  overflow-hidden {
+    overflow-x: hidden;
+  }
+}
+
+/* ==================== TABLET SIZES ==================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.25rem !important;
+  }
+
+  section {
+    padding: 3rem 1.5rem !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ==================== DESKTOP SIZES ==================== */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  section {
+    padding: 5rem 1rem;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Safe Area for Notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Touch Target Size (44x44px minimum) */
+button,
+a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent Horizontal Scroll */
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Font Size Adjustment */
+@media (max-width: 375px) {
+  /* Extra small phones */
+  h1 {
+    font-size: 1.875rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 0.875rem !important;
+  }
+
+  button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 2rem 1rem !important;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+  }
+
+  .h-96,
+  .h-64 {
+    height: 8rem !important;
+  }
+}
+
+/* High Resolution Displays */
+@media (min-width: 2560px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  section {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  button,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Dark Mode Optimization */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Touch Friendly Spacing */
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile touches */
+  button:active {
+    transform: scale(0.98);
+  }
+
+  a:active {
+    opacity: 0.8;
+  }
+
+  .group:hover {
+    /* Remove hover effects on touch */
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  button {
+    border-width: 2px;
+  }
+
+  text {
+    font-weight: bold;
+  }
+}
+
+/* Font Size Zoom */
+@media (font-size-monospace: 20px) {
+  body {
+    font-size: 18px;
+  }
+}
