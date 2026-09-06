@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { IncomingMessage } from 'http';
-import { sql } from '../_lib/db';
-import { verifyWebhookSignature, verifyPayment, extractTransactionId, extractEventType } from '../_lib/djomy';
+import { sql } from '../_lib/db.js';
+import { verifyWebhookSignature, verifyPayment, extractTransactionId, extractEventType } from '../_lib/djomy.js';
 
 // Disable Vercel's automatic body parsing: signature verification needs the
 // exact raw bytes Djomy signed, not a re-serialized copy of req.body.
