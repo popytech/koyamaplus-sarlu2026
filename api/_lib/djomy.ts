@@ -27,6 +27,8 @@ async function getAccessToken(): Promise<{ token: string; clientId: string; clie
     headers: {
       'X-API-KEY': apiKeyHeader(clientId, clientSecret),
       'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'User-Agent': 'Mozilla/5.0 (compatible; KoyamaPlus/1.0; +https://koyamaplus.vercel.app)',
     },
   });
 
@@ -53,6 +55,8 @@ async function authedFetch(path: string, init: RequestInit = {}) {
       Authorization: `Bearer ${token}`,
       'X-API-KEY': apiKeyHeader(clientId, clientSecret),
       'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'User-Agent': 'Mozilla/5.0 (compatible; KoyamaPlus/1.0; +https://koyamaplus.vercel.app)',
     },
   });
 
