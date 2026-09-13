@@ -73,11 +73,12 @@ async function authedFetch(path: string, init: RequestInit = {}) {
   });
 
   const text = await res.text();
-  const body = text ? JSON.parse(text) : {};
 
   if (!res.ok) {
     throw new Error(`Djomy request to ${path} failed: ${res.status} ${text}`);
   }
+
+  const body = text ? JSON.parse(text) : {};
 
   return body;
 }
