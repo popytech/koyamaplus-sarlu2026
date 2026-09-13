@@ -47,7 +47,8 @@ async function getAccessToken(): Promise<{
   }
 
   const body: any = await res.json();
-  const token = body.token ?? body.accessToken ?? body.access_token ?? body.data?.token;
+  const token =
+    body.token ?? body.accessToken ?? body.access_token ?? body.data?.token ?? body.data?.accessToken;
   if (!token) {
     throw new Error(`Djomy auth response missing token: ${JSON.stringify(body)}`);
   }
@@ -127,11 +128,15 @@ export async function verifyPayment(transactionId: string): Promise<VerifyPaymen
     method: 'GET',
   });
 
+  // The wrapper's top-level `status` is an HTTP-like code (e.g. 200), not the
+  // payment status — the real one lives under `data` on this API.
+  const data = body.data ?? body;
+
   return {
-    status: body.status,
-    paidAmount: body.paidAmount ?? null,
-    receivedAmount: body.receivedAmount ?? null,
-    currency: body.currency ?? null,
+    status: data.status,
+    paidAmount: data.paidAmount ?? null,
+    receivedAmount: data.receivedAmount ?? null,
+    currency: data.currency ?? null,
     raw: body,
   };
 }
