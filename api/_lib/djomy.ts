@@ -100,7 +100,7 @@ export interface CreatePaymentGatewayResult {
 export async function createPaymentGateway(
   params: CreatePaymentGatewayParams
 ): Promise<CreatePaymentGatewayResult> {
-  const body: any = await authedFetch('/v1/payment-gateways', {
+  const body: any = await authedFetch('/partner/v1/payment-gateways', {
     method: 'POST',
     body: JSON.stringify(params),
   });
@@ -124,7 +124,7 @@ export interface VerifyPaymentResult {
 }
 
 export async function verifyPayment(transactionId: string): Promise<VerifyPaymentResult> {
-  const body: any = await authedFetch(`/v1/payments/${encodeURIComponent(transactionId)}`, {
+  const body: any = await authedFetch(`/partner/v1/payments/${encodeURIComponent(transactionId)}`, {
     method: 'GET',
   });
 
