@@ -9,10 +9,13 @@ function getConfig() {
   const clientId = process.env.DJOMY_CLIENT_ID;
   const clientSecret = process.env.DJOMY_CLIENT_SECRET;
   const baseUrl = process.env.DJOMY_API_BASE_URL;
-  if (!clientId || !clientSecret || !baseUrl) {
-    throw new Error('DJOMY_CLIENT_ID, DJOMY_CLIENT_SECRET and DJOMY_API_BASE_URL must be set');
+  const partnerDomainKey = process.env.DJOMY_PARTNER_DOMAIN_KEY;
+  if (!clientId || !clientSecret || !baseUrl || !partnerDomainKey) {
+    throw new Error(
+      'DJOMY_CLIENT_ID, DJOMY_CLIENT_SECRET, DJOMY_API_BASE_URL and DJOMY_PARTNER_DOMAIN_KEY must be set'
+    );
   }
-  return { clientId, clientSecret, baseUrl: baseUrl.replace(/\/+$/, '') };
+  return { clientId, clientSecret, baseUrl: baseUrl.replace(/\/+$/, ''), partnerDomainKey };
 }
 
 function apiKeyHeader(clientId: string, clientSecret: string): string {
@@ -20,12 +23,19 @@ function apiKeyHeader(clientId: string, clientSecret: string): string {
   return `${clientId}:${hmac}`;
 }
 
-async function getAccessToken(): Promise<{ token: string; clientId: string; clientSecret: string; baseUrl: string }> {
-  const { clientId, clientSecret, baseUrl } = getConfig();
+async function getAccessToken(): Promise<{
+  token: string;
+  clientId: string;
+  clientSecret: string;
+  baseUrl: string;
+  partnerDomainKey: string;
+}> {
+  const { clientId, clientSecret, baseUrl, partnerDomainKey } = getConfig();
   const res = await fetch(`${baseUrl}/v1/auth`, {
     method: 'POST',
     headers: {
       'X-API-KEY': apiKeyHeader(clientId, clientSecret),
+      'X-PARTNER-DOMAIN': partnerDomainKey,
       'Content-Type': 'application/json',
       Accept: 'application/json',
       'User-Agent': 'Mozilla/5.0 (compatible; KoyamaPlus/1.0; +https://koyamaplus.vercel.app)',
@@ -42,11 +52,11 @@ async function getAccessToken(): Promise<{ token: string; clientId: string; clie
     throw new Error(`Djomy auth response missing token: ${JSON.stringify(body)}`);
   }
 
-  return { token, clientId, clientSecret, baseUrl };
+  return { token, clientId, clientSecret, baseUrl, partnerDomainKey };
 }
 
 async function authedFetch(path: string, init: RequestInit = {}) {
-  const { token, clientId, clientSecret, baseUrl } = await getAccessToken();
+  const { token, clientId, clientSecret, baseUrl, partnerDomainKey } = await getAccessToken();
 
   const res = await fetch(`${baseUrl}${path}`, {
     ...init,
@@ -54,6 +64,7 @@ async function authedFetch(path: string, init: RequestInit = {}) {
       ...init.headers,
       Authorization: `Bearer ${token}`,
       'X-API-KEY': apiKeyHeader(clientId, clientSecret),
+      'X-PARTNER-DOMAIN': partnerDomainKey,
       'Content-Type': 'application/json',
       Accept: 'application/json',
       'User-Agent': 'Mozilla/5.0 (compatible; KoyamaPlus/1.0; +https://koyamaplus.vercel.app)',
