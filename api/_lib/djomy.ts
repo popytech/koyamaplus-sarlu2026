@@ -101,7 +101,7 @@ export interface CreatePaymentGatewayResult {
 export async function createPaymentGateway(
   params: CreatePaymentGatewayParams
 ): Promise<CreatePaymentGatewayResult> {
-  const body: any = await authedFetch('/v1/payment-gateways', {
+  const body: any = await authedFetch('/v1/payments/gateway', {
     method: 'POST',
     body: JSON.stringify(params),
   });
