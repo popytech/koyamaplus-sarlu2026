@@ -86,6 +86,7 @@ async function authedFetch(path: string, init: RequestInit = {}) {
 export interface CreatePaymentGatewayParams {
   amount: number;
   currency: 'GNF' | 'FCFA' | 'Dollar' | 'Leones';
+  countryCode: 'GN' | 'SL' | 'LR';
   payerNumber: string;
   description: string;
   allowedPaymentMethods: Array<'OM' | 'MOMO'>;

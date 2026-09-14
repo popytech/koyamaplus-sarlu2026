@@ -90,6 +90,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const gateway = await createPaymentGateway({
       amount: total,
       currency: 'GNF',
+      countryCode: 'GN',
       payerNumber: addr.phone.trim(),
       description: `Commande ${orderNumber} - KOYAMA PLUS`,
       allowedPaymentMethods: [PAYMENT_METHOD_TO_DJOMY[body.paymentMethod]],
