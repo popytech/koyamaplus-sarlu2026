@@ -8,6 +8,14 @@ interface CheckoutProps {
   onBack: () => void;
 }
 
+const PAYMENT_METHOD_LABELS: Record<string, string> = {
+  orange_money: 'Orange Money',
+  mtn_money: 'MTN Money',
+  card: 'Carte bancaire (Visa/Mastercard)',
+  kulu: 'Kulu',
+  soutra_money: 'Soutra Money',
+};
+
 export default function Checkout({ onSuccess, onBack }: CheckoutProps) {
   const { user, profile } = useAuth();
   const { cartItems, cartTotal, clearCart } = useCart();
@@ -216,7 +224,7 @@ export default function Checkout({ onSuccess, onBack }: CheckoutProps) {
               </li>
               <li className="flex items-start">
                 <CheckCircle className="w-4 h-4 mr-2 mt-0.5 text-brand-red flex-shrink-0" />
-                <span>Payé en ligne par {formData.payment_method === 'orange_money' ? 'Orange Money' : 'MTN Money'}</span>
+                <span>Payé en ligne par {PAYMENT_METHOD_LABELS[formData.payment_method]}</span>
               </li>
             </ul>
           </div>
@@ -387,11 +395,57 @@ export default function Checkout({ onSuccess, onBack }: CheckoutProps) {
                     </div>
                     <div className="text-lg sm:text-2xl font-bold text-brand-blue flex-shrink-0">MTN</div>
                   </label>
+
+                  <label className="flex items-center p-3 sm:p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input
+                      type="radio"
+                      name="payment_method"
+                      value="card"
+                      checked={formData.payment_method === 'card'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-brand-red"
+                    />
+                    <div className="ml-2 sm:ml-3 flex-1 min-w-0">
+                      <div className="font-semibold text-sm sm:text-base text-gray-900">Carte bancaire</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Visa / Mastercard</div>
+                    </div>
+                    <div className="text-lg sm:text-2xl font-bold text-gray-700 flex-shrink-0">💳</div>
+                  </label>
+
+                  <label className="flex items-center p-3 sm:p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input
+                      type="radio"
+                      name="payment_method"
+                      value="kulu"
+                      checked={formData.payment_method === 'kulu'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-brand-red"
+                    />
+                    <div className="ml-2 sm:ml-3 flex-1 min-w-0">
+                      <div className="font-semibold text-sm sm:text-base text-gray-900">Kulu</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Paiement immédiat en ligne</div>
+                    </div>
+                  </label>
+
+                  <label className="flex items-center p-3 sm:p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                    <input
+                      type="radio"
+                      name="payment_method"
+                      value="soutra_money"
+                      checked={formData.payment_method === 'soutra_money'}
+                      onChange={handleChange}
+                      className="w-4 h-4 text-brand-red"
+                    />
+                    <div className="ml-2 sm:ml-3 flex-1 min-w-0">
+                      <div className="font-semibold text-sm sm:text-base text-gray-900">Soutra Money</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Paiement immédiat en ligne</div>
+                    </div>
+                  </label>
                 </div>
 
                 <div className="mt-3 sm:mt-4 bg-brand-blue/5 border border-brand-blue/20 rounded-lg p-3 sm:p-4">
                   <p className="text-xs sm:text-sm text-brand-blue">
-                    <strong>Information:</strong> Vous serez redirigé vers la page sécurisée Djomy pour saisir le code de confirmation envoyé par votre opérateur mobile money.
+                    <strong>Information:</strong> Vous serez redirigé vers la page sécurisée Djomy pour finaliser votre paiement.
                   </p>
                 </div>
               </div>

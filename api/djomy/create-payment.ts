@@ -10,7 +10,7 @@ interface CartItemInput {
 }
 
 interface RequestBody {
-  paymentMethod: 'orange_money' | 'mtn_money';
+  paymentMethod: 'orange_money' | 'mtn_money' | 'card' | 'kulu' | 'soutra_money';
   items: CartItemInput[];
   shippingAddress: {
     full_name: string;
@@ -21,9 +21,12 @@ interface RequestBody {
   notes?: string;
 }
 
-const PAYMENT_METHOD_TO_DJOMY: Record<RequestBody['paymentMethod'], 'OM' | 'MOMO'> = {
+const PAYMENT_METHOD_TO_DJOMY: Record<RequestBody['paymentMethod'], 'OM' | 'MOMO' | 'CARD' | 'KULU' | 'SOUTRA'> = {
   orange_money: 'OM',
   mtn_money: 'MOMO',
+  card: 'CARD',
+  kulu: 'KULU',
+  soutra_money: 'SOUTRA',
 };
 
 function computeTotal(items: CartItemInput[]): { total: number; resolvedItems: any[] } {

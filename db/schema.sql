@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS orders (
   currency text NOT NULL DEFAULT 'GNF',
   status text NOT NULL DEFAULT 'pending'
     CHECK (status IN ('pending', 'processing', 'shipped', 'delivered', 'cancelled')),
-  payment_method text NOT NULL CHECK (payment_method IN ('orange_money', 'mtn_money')),
+  payment_method text NOT NULL CHECK (payment_method IN ('orange_money', 'mtn_money', 'card', 'kulu', 'soutra_money')),
   payment_status text NOT NULL DEFAULT 'pending'
     CHECK (payment_status IN ('pending', 'paid', 'failed', 'refunded')),
   shipping_address jsonb NOT NULL,

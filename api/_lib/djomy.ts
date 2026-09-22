@@ -89,7 +89,7 @@ export interface CreatePaymentGatewayParams {
   countryCode: 'GN' | 'SL' | 'LR';
   payerNumber: string;
   description: string;
-  allowedPaymentMethods: Array<'OM' | 'MOMO'>;
+  allowedPaymentMethods: Array<'OM' | 'MOMO' | 'CARD' | 'KULU' | 'SOUTRA'>;
   returnUrl: string;
 }
 
